@@ -1,7 +1,14 @@
 package berzhanov.javarush.island;
 
+import berzhanov.javarush.island.models.Island;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        Island island = new Island( 5, 5, 2, 1);
+
+        Life life = new Life(island);
+        life.doLife();
+
     }
 }

@@ -1,24 +1,10 @@
 package berzhanov.javarush.island.models.animals.predators;
 
-import berzhanov.javarush.island.models.animals.Predator;
 
 /**
  * Орел
  */
 
-public class Eagle extends Predator {
-    @Override
-    public void eat() {
+public class Eagle {
 
-    }
-
-    @Override
-    public void walk() {
-
-    }
-
-    @Override
-    public void reproduce() {
-
-    }
 }
