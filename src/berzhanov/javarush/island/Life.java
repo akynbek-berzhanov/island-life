@@ -15,7 +15,7 @@ public class Life {
     void doLife(){
 
         ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
-        executorService.scheduleAtFixedRate(new LifeStep(this.island), 0, 5, TimeUnit.SECONDS);
+        executorService.scheduleAtFixedRate(new LifeStep(island), 0, island.getLifeStepSecond(), TimeUnit.SECONDS);
     }
 
 

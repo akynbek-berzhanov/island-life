@@ -8,6 +8,7 @@ import lombok.Data;
 
 @Data
 public abstract class Animal {
+    //private String name;
 
     //Вес одного животного, кг
     private Double weightKg;

@@ -1,14 +1,8 @@
 package berzhanov.javarush.island.models;
 
-import berzhanov.javarush.island.models.animals.Animal;
-import berzhanov.javarush.island.models.animals.Plant;
-import berzhanov.javarush.island.models.animals.herbivore.Rabbit;
-import berzhanov.javarush.island.models.animals.predators.Wolf;
 import lombok.Data;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -24,22 +18,23 @@ public class Island {
     //высота, количество клеток
     private final Integer height;
 
-    private final Integer lifeTimeSecond;
+    //время шага жизни в секундах
+    private final Integer lifeStepSecond;
 
+    //количество каждого животного
     private final Integer startAnimalCount;
 
     private Map<String, Location> locationMap;
 
-    public Island(Integer width, Integer height, Integer lifeTimeSecond, Integer startAnimalCount) {
+    public Island(Integer width, Integer height, Integer lifeStepSecond, Integer startAnimalCount) {
         this.width = width;
         this.height = height;
-        this.lifeTimeSecond = lifeTimeSecond;
+        this.lifeStepSecond = lifeStepSecond;
         this.startAnimalCount = startAnimalCount;
         locationMap = new HashMap<>();
 
-        for (int i = 1; i <= height; i++) {
+        /*for (int i = 1; i <= height; i++) {
             for (int j = 1; j <= width; j++) {
-
                 Location location = new Location();
                 List<Animal> animals = new ArrayList<>();
                 List<Plant> plants = new ArrayList<>();
@@ -51,11 +46,22 @@ public class Island {
 
                 locationMap.put(i + "-" + i, location);
             }
-        }
-
+        }*/
     }
 
-
+    /**
+     * добавление пустых локаций
+     * @return this
+     */
+    public Island createLocations(){
+        for (int i = 1; i < height+1; i++) {
+            for (int j = 1; j < width+1; j++) {
+                Location location = new Location();
+                locationMap.put(i + "-" + j, location);
+            }
+        }
+        return this;
+    }
 
 
 }

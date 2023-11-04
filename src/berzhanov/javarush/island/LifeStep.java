@@ -8,6 +8,7 @@ import berzhanov.javarush.island.models.animals.Predator;
 import lombok.AllArgsConstructor;
 
 import java.util.List;
+import java.util.Map;
 
 
 @AllArgsConstructor
@@ -37,13 +38,15 @@ public class LifeStep implements Runnable {
 
         predator.eat(herbivore);
 
-        for (Location location : locations) {
-            for (Animal animal : location.getAnimals()){
+        for (Map.Entry<String, Location> location : island.getLocationMap().entrySet()) {
+            System.out.println("Локация: " + location.getKey());
+            for (Animal animal : location.getValue().getAnimals()){
                 System.out.println(animal.getClass() + (animal.getIsDied() ?  ". Умер." : ". Живой." )
                         + "Вес: " + animal.getWeightKg());
             }
         }
 
+        System.out.println();
     }
 
 
