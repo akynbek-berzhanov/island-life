@@ -4,6 +4,7 @@ import berzhanov.javarush.island.models.Island;
 import berzhanov.javarush.island.models.Location;
 import berzhanov.javarush.island.models.animals.Animal;
 import berzhanov.javarush.island.models.animals.Herbivore;
+import berzhanov.javarush.island.models.animals.Plant;
 import berzhanov.javarush.island.models.animals.Predator;
 import lombok.AllArgsConstructor;
 
@@ -43,6 +44,9 @@ public class LifeStep implements Runnable {
             for (Animal animal : location.getValue().getAnimals()){
                 System.out.println(animal.getClass() + (animal.getIsDied() ?  ". Умер." : ". Живой." )
                         + "Вес: " + animal.getWeightKg());
+            }
+            for (Plant plant : location.getValue().getPlants()){
+                System.out.println("Растение: " + plant.getClass());
             }
         }
 

@@ -26,4 +26,13 @@ public class Location {
         }
         return this;
     }
+
+    public Location createPlants(){
+        int count = 1;
+        for (int i = 0; i < count; i++) {
+            plants.add(new Plant());
+        }
+        return this;
+    }
+
 }
