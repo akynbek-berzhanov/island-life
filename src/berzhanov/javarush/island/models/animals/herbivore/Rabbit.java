@@ -1,6 +1,5 @@
 package berzhanov.javarush.island.models.animals.herbivore;
 
-import berzhanov.javarush.island.models.animals.Animal;
 import berzhanov.javarush.island.models.animals.Herbivore;
 
 /**
@@ -12,18 +11,4 @@ public class Rabbit extends Herbivore {
         super(weightKg, locationMaxCount, locationStepCount, toBeFullKg);
     }
 
-    @Override
-    public void eat(Animal animal) {
-
-    }
-
-    @Override
-    public void walk() {
-
-    }
-
-    @Override
-    public void reproduce() {
-
-    }
 }
