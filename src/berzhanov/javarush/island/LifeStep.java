@@ -37,7 +37,9 @@ public class LifeStep implements Runnable {
             }
         }
 
-        predator.eat(herbivore);
+        if (predator != null || herbivore != null) {
+            predator.eat(herbivore);
+        }
 
         for (Map.Entry<String, Location> location : island.getLocationMap().entrySet()) {
             System.out.println("Локация: " + location.getKey());
